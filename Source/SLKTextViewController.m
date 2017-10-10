@@ -158,6 +158,11 @@ CGFloat const SLKAutoCompletionViewDefaultHeight = 140.0;
     
     self.automaticallyAdjustsScrollViewInsets = YES;
     self.extendedLayoutIncludesOpaqueBars = YES;
+
+    // disable automatic content inset adjustment
+    if (@available(iOS 11.0, *)) {
+        self.scrollViewProxy.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
 }
 
 
